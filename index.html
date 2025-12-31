@@ -30,6 +30,9 @@
                     <button class="nav-btn" data-section="simulator">Simulateur</button>
                     <button class="nav-btn" data-section="guide">Guide AI Act</button>
                     <button class="nav-btn" data-section="about">À propos</button>
+                    <button class="theme-toggle" id="theme-toggle" aria-label="Changer de thème">
+                        <svg viewBox="0 0 24 24" fill="none"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </button>
                 </nav>
             </div>
         </header>
@@ -175,14 +178,30 @@
                                 <path d="M7 10L12 15L17 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                 <path d="M12 15V3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
-                            Télécharger le rapport PDF
+                            Télécharger PDF
+                        </button>
+                        <button class="btn btn-export" id="export-json">
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M14 2H6C5.46957 2 4.96086 2.21071 4.58579 2.58579C4.21071 2.96086 4 3.46957 4 4V20C4 20.5304 4.21071 21.0391 4.58579 21.4142C4.96086 21.7893 5.46957 22 6 22H18C18.5304 22 19.0391 21.7893 19.4142 21.4142C19.7893 21.0391 20 20.5304 20 20V8L14 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M14 2V8H20" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            Exporter JSON
+                        </button>
+                        <button class="btn btn-share" id="share-results">
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="18" cy="5" r="3" stroke="currentColor" stroke-width="2"/>
+                                <circle cx="6" cy="12" r="3" stroke="currentColor" stroke-width="2"/>
+                                <circle cx="18" cy="19" r="3" stroke="currentColor" stroke-width="2"/>
+                                <path d="M8.59 13.51L15.42 17.49M15.41 6.51L8.59 10.49" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                            Partager
                         </button>
                         <button class="btn btn-secondary" id="restart-simulator">
                             <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M1 4V10H7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                 <path d="M3.51 15C4.15839 16.8404 5.38734 18.4202 7.01166 19.5014C8.63598 20.5826 10.5677 21.1066 12.5157 20.9945C14.4637 20.8824 16.3226 20.1402 17.8121 18.8798C19.3017 17.6193 20.3413 15.9090 20.7742 14.0064C21.2072 12.1037 21.0101 10.1135 20.2126 8.33111C19.4152 6.54871 18.0605 5.06723 16.3528 4.11011C14.6451 3.15299 12.6769 2.77229 10.7447 3.02273C8.81245 3.27316 7.02091 4.14058 5.64 5.52L1 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
-                            Nouvelle évaluation
+                            Recommencer
                         </button>
                     </div>
                 </div>
@@ -446,7 +465,7 @@
                     </div>
 
                     <div class="version-info">
-                        <p>Version 1.0 - Basé sur le Règlement (UE) 2024/1689</p>
+                        <p>Version 2.0 - Basé sur le Règlement (UE) 2024/1689</p>
                         <p>Dernière mise à jour : Décembre 2024</p>
                     </div>
                 </div>
