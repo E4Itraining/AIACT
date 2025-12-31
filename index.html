@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulateur de Conformité AI Act - Union Européenne</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <div class="logo">
+                    <div class="logo-icon">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <div class="logo-text">
+                        <h1>AI Act Compliance</h1>
+                        <span>Simulateur de Conformité</span>
+                    </div>
+                </div>
+                <nav class="nav">
+                    <button class="nav-btn active" data-section="home">Accueil</button>
+                    <button class="nav-btn" data-section="simulator">Simulateur</button>
+                    <button class="nav-btn" data-section="guide">Guide AI Act</button>
+                    <button class="nav-btn" data-section="about">À propos</button>
+                </nav>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Home Section -->
+            <section id="home" class="section active">
+                <div class="hero">
+                    <div class="hero-content">
+                        <h2>Évaluez la conformité de votre système d'IA au Règlement Européen</h2>
+                        <p>Le Règlement sur l'Intelligence Artificielle (AI Act) est le premier cadre juridique complet au monde régissant l'IA. Notre simulateur vous aide à déterminer les obligations applicables à votre système.</p>
+                        <button class="btn btn-primary btn-large" id="start-simulator">
+                            Commencer l'évaluation
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="hero-visual">
+                        <div class="risk-pyramid">
+                            <div class="pyramid-level level-unacceptable">
+                                <span class="level-label">Risque Inacceptable</span>
+                                <span class="level-desc">Interdit</span>
+                            </div>
+                            <div class="pyramid-level level-high">
+                                <span class="level-label">Haut Risque</span>
+                                <span class="level-desc">Obligations strictes</span>
+                            </div>
+                            <div class="pyramid-level level-limited">
+                                <span class="level-label">Risque Limité</span>
+                                <span class="level-desc">Transparence</span>
+                            </div>
+                            <div class="pyramid-level level-minimal">
+                                <span class="level-label">Risque Minimal</span>
+                                <span class="level-desc">Pas d'obligations</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="features">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M9 11L12 14L22 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M21 12V19C21 19.5304 20.7893 20.0391 20.4142 20.4142C20.0391 20.7893 19.5304 21 19 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V5C3 4.46957 3.21071 3.96086 3.58579 3.58579C3.96086 3.21071 4.46957 3 5 3H16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <h3>Évaluation Complète</h3>
+                        <p>Questionnaire détaillé basé sur les articles et annexes de l'AI Act pour une classification précise.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="currentColor" stroke-width="2"/>
+                                <path d="M12 6V12L16 14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </div>
+                        <h3>Résultats Instantanés</h3>
+                        <p>Obtenez immédiatement votre niveau de risque et les obligations de conformité applicables.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M14 2H6C5.46957 2 4.96086 2.21071 4.58579 2.58579C4.21071 2.96086 4 3.46957 4 4V20C4 20.5304 4.21071 21.0391 4.58579 21.4142C4.96086 21.7893 5.46957 22 6 22H18C18.5304 22 19.0391 21.7893 19.4142 21.4142C19.7893 21.0391 20 20.5304 20 20V8L14 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M14 2V8H20" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <h3>Rapport Détaillé</h3>
+                        <p>Générez un rapport de conformité exportable avec recommandations personnalisées.</p>
+                    </div>
+                </div>
+
+                <div class="info-cards">
+                    <div class="info-card">
+                        <h3>Qu'est-ce que l'AI Act ?</h3>
+                        <p>Le Règlement (UE) 2024/1689, dit « AI Act », est entré en vigueur le 1er août 2024. Il établit des règles harmonisées pour le développement, la mise sur le marché et l'utilisation des systèmes d'IA dans l'Union européenne.</p>
+                    </div>
+                    <div class="info-card">
+                        <h3>Qui est concerné ?</h3>
+                        <p>Fournisseurs, déployeurs, importateurs, distributeurs et fabricants de systèmes d'IA mis sur le marché ou utilisés dans l'UE, quelle que soit leur localisation géographique.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Simulator Section -->
+            <section id="simulator" class="section">
+                <div class="simulator-container">
+                    <!-- Progress Bar -->
+                    <div class="progress-container">
+                        <div class="progress-bar">
+                            <div class="progress-fill" id="progress-fill"></div>
+                        </div>
+                        <div class="progress-steps" id="progress-steps"></div>
+                    </div>
+
+                    <!-- Question Container -->
+                    <div class="question-container" id="question-container">
+                        <!-- Questions will be dynamically inserted here -->
+                    </div>
+
+                    <!-- Navigation Buttons -->
+                    <div class="simulator-nav">
+                        <button class="btn btn-secondary" id="prev-btn" disabled>
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M19 12H5M5 12L12 19M5 12L12 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            Précédent
+                        </button>
+                        <button class="btn btn-primary" id="next-btn">
+                            Suivant
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Results Container (hidden by default) -->
+                <div class="results-container hidden" id="results-container">
+                    <div class="results-header">
+                        <h2>Résultats de l'Évaluation</h2>
+                        <p>Analyse de conformité à l'AI Act</p>
+                    </div>
+
+                    <div class="risk-result" id="risk-result">
+                        <!-- Risk level will be displayed here -->
+                    </div>
+
+                    <div class="obligations-section" id="obligations-section">
+                        <!-- Obligations will be displayed here -->
+                    </div>
+
+                    <div class="recommendations-section" id="recommendations-section">
+                        <!-- Recommendations will be displayed here -->
+                    </div>
+
+                    <div class="results-actions">
+                        <button class="btn btn-primary" id="download-report">
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M21 15V19C21 19.5304 20.7893 20.0391 20.4142 20.4142C20.0391 20.7893 19.5304 21 19 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M7 10L12 15L17 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M12 15V3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            Télécharger le rapport PDF
+                        </button>
+                        <button class="btn btn-secondary" id="restart-simulator">
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1 4V10H7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M3.51 15C4.15839 16.8404 5.38734 18.4202 7.01166 19.5014C8.63598 20.5826 10.5677 21.1066 12.5157 20.9945C14.4637 20.8824 16.3226 20.1402 17.8121 18.8798C19.3017 17.6193 20.3413 15.9090 20.7742 14.0064C21.2072 12.1037 21.0101 10.1135 20.2126 8.33111C19.4152 6.54871 18.0605 5.06723 16.3528 4.11011C14.6451 3.15299 12.6769 2.77229 10.7447 3.02273C8.81245 3.27316 7.02091 4.14058 5.64 5.52L1 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            Nouvelle évaluation
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Guide Section -->
+            <section id="guide" class="section">
+                <div class="guide-container">
+                    <h2>Guide de l'AI Act</h2>
+                    <p class="guide-intro">Comprendre le Règlement Européen sur l'Intelligence Artificielle</p>
+
+                    <div class="guide-tabs">
+                        <button class="guide-tab active" data-tab="classification">Classification des Risques</button>
+                        <button class="guide-tab" data-tab="obligations">Obligations</button>
+                        <button class="guide-tab" data-tab="timeline">Calendrier</button>
+                        <button class="guide-tab" data-tab="sanctions">Sanctions</button>
+                    </div>
+
+                    <div class="guide-content">
+                        <!-- Classification Tab -->
+                        <div class="guide-panel active" id="panel-classification">
+                            <div class="risk-categories">
+                                <div class="risk-category unacceptable">
+                                    <div class="category-header">
+                                        <h3>Risque Inacceptable</h3>
+                                        <span class="category-badge">INTERDIT</span>
+                                    </div>
+                                    <p>Systèmes d'IA interdits car représentant une menace pour les droits fondamentaux :</p>
+                                    <ul>
+                                        <li>Manipulation subliminale ou exploitation de vulnérabilités</li>
+                                        <li>Notation sociale par les autorités publiques</li>
+                                        <li>Identification biométrique en temps réel dans les espaces publics (sauf exceptions)</li>
+                                        <li>Catégorisation biométrique basée sur des données sensibles</li>
+                                        <li>Reconnaissance des émotions sur le lieu de travail/éducation</li>
+                                        <li>Scraping non ciblé d'images faciales</li>
+                                        <li>Inférence d'émotions dans les forces de l'ordre (sauf exceptions)</li>
+                                    </ul>
+                                    <div class="article-ref">Article 5 du Règlement</div>
+                                </div>
+
+                                <div class="risk-category high">
+                                    <div class="category-header">
+                                        <h3>Haut Risque</h3>
+                                        <span class="category-badge">OBLIGATIONS STRICTES</span>
+                                    </div>
+                                    <p>Systèmes soumis à des exigences strictes avant mise sur le marché :</p>
+                                    <ul>
+                                        <li><strong>Annexe I :</strong> Composants de sécurité de produits réglementés (dispositifs médicaux, jouets, machines, véhicules...)</li>
+                                        <li><strong>Annexe III :</strong> Domaines sensibles :
+                                            <ul>
+                                                <li>Biométrie et identification</li>
+                                                <li>Infrastructures critiques</li>
+                                                <li>Éducation et formation professionnelle</li>
+                                                <li>Emploi et gestion des travailleurs</li>
+                                                <li>Services essentiels (crédit, assurance, urgences)</li>
+                                                <li>Application de la loi</li>
+                                                <li>Migration et contrôle des frontières</li>
+                                                <li>Justice et processus démocratiques</li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                    <div class="article-ref">Articles 6-7, Annexes I et III</div>
+                                </div>
+
+                                <div class="risk-category limited">
+                                    <div class="category-header">
+                                        <h3>Risque Limité</h3>
+                                        <span class="category-badge">TRANSPARENCE</span>
+                                    </div>
+                                    <p>Systèmes soumis à des obligations de transparence :</p>
+                                    <ul>
+                                        <li>Chatbots et agents conversationnels</li>
+                                        <li>Systèmes de génération de contenu (deepfakes)</li>
+                                        <li>Systèmes de reconnaissance d'émotions</li>
+                                        <li>Systèmes de catégorisation biométrique</li>
+                                    </ul>
+                                    <p>Les utilisateurs doivent être informés qu'ils interagissent avec une IA ou que le contenu est généré par IA.</p>
+                                    <div class="article-ref">Article 50</div>
+                                </div>
+
+                                <div class="risk-category minimal">
+                                    <div class="category-header">
+                                        <h3>Risque Minimal</h3>
+                                        <span class="category-badge">PAS D'OBLIGATIONS</span>
+                                    </div>
+                                    <p>Tous les autres systèmes d'IA :</p>
+                                    <ul>
+                                        <li>Jeux vidéo utilisant l'IA</li>
+                                        <li>Filtres anti-spam</li>
+                                        <li>Systèmes de recommandation</li>
+                                        <li>Assistants personnels</li>
+                                    </ul>
+                                    <p>Pas d'obligations spécifiques, mais les bonnes pratiques sont encouragées via des codes de conduite volontaires.</p>
+                                    <div class="article-ref">Article 95</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Obligations Tab -->
+                        <div class="guide-panel" id="panel-obligations">
+                            <div class="obligations-grid">
+                                <div class="obligation-card">
+                                    <h4>Système de gestion des risques</h4>
+                                    <p>Mise en place d'un processus itératif d'identification, analyse et atténuation des risques tout au long du cycle de vie du système.</p>
+                                    <span class="article-tag">Art. 9</span>
+                                </div>
+                                <div class="obligation-card">
+                                    <h4>Gouvernance des données</h4>
+                                    <p>Pratiques de gestion des données d'entraînement, validation et test avec critères de qualité, représentativité et absence de biais.</p>
+                                    <span class="article-tag">Art. 10</span>
+                                </div>
+                                <div class="obligation-card">
+                                    <h4>Documentation technique</h4>
+                                    <p>Documentation complète démontrant la conformité : description du système, processus de développement, capacités et limites.</p>
+                                    <span class="article-tag">Art. 11</span>
+                                </div>
+                                <div class="obligation-card">
+                                    <h4>Journalisation automatique</h4>
+                                    <p>Capacités de logging permettant la traçabilité du fonctionnement, conservation des logs pendant une durée appropriée.</p>
+                                    <span class="article-tag">Art. 12</span>
+                                </div>
+                                <div class="obligation-card">
+                                    <h4>Transparence</h4>
+                                    <p>Instructions d'utilisation claires pour les déployeurs : caractéristiques, capacités, limites, risques et mesures de surveillance humaine.</p>
+                                    <span class="article-tag">Art. 13</span>
+                                </div>
+                                <div class="obligation-card">
+                                    <h4>Surveillance humaine</h4>
+                                    <p>Conception permettant une supervision humaine effective pendant l'utilisation, avec capacité d'intervention et d'arrêt.</p>
+                                    <span class="article-tag">Art. 14</span>
+                                </div>
+                                <div class="obligation-card">
+                                    <h4>Exactitude et robustesse</h4>
+                                    <p>Niveaux appropriés d'exactitude, robustesse et cybersécurité maintenus tout au long du cycle de vie.</p>
+                                    <span class="article-tag">Art. 15</span>
+                                </div>
+                                <div class="obligation-card">
+                                    <h4>Système de gestion de la qualité</h4>
+                                    <p>Procédures documentées pour assurer la conformité continue : stratégie de conformité, processus de conception, gestion des risques.</p>
+                                    <span class="article-tag">Art. 17</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Timeline Tab -->
+                        <div class="guide-panel" id="panel-timeline">
+                            <div class="timeline">
+                                <div class="timeline-item completed">
+                                    <div class="timeline-date">1er août 2024</div>
+                                    <div class="timeline-content">
+                                        <h4>Entrée en vigueur</h4>
+                                        <p>Le Règlement AI Act entre officiellement en vigueur.</p>
+                                    </div>
+                                </div>
+                                <div class="timeline-item completed">
+                                    <div class="timeline-date">2 février 2025</div>
+                                    <div class="timeline-content">
+                                        <h4>Interdictions</h4>
+                                        <p>Application des pratiques interdites (Article 5) et des obligations de maîtrise de l'IA.</p>
+                                    </div>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-date">2 août 2025</div>
+                                    <div class="timeline-content">
+                                        <h4>Modèles GPAI</h4>
+                                        <p>Application des règles pour les modèles d'IA à usage général (GPAI) et nomination des autorités compétentes.</p>
+                                    </div>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-date">2 août 2026</div>
+                                    <div class="timeline-content">
+                                        <h4>Application complète</h4>
+                                        <p>Toutes les dispositions du Règlement deviennent applicables, y compris pour les systèmes à haut risque de l'Annexe III.</p>
+                                    </div>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-date">2 août 2027</div>
+                                    <div class="timeline-content">
+                                        <h4>Systèmes Annexe I</h4>
+                                        <p>Application pour les systèmes à haut risque composants de produits réglementés (Annexe I).</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Sanctions Tab -->
+                        <div class="guide-panel" id="panel-sanctions">
+                            <div class="sanctions-grid">
+                                <div class="sanction-card severe">
+                                    <div class="sanction-amount">35 M€ ou 7%</div>
+                                    <div class="sanction-desc">du chiffre d'affaires mondial annuel</div>
+                                    <p>Pour les violations des pratiques interdites (Article 5)</p>
+                                </div>
+                                <div class="sanction-card high">
+                                    <div class="sanction-amount">15 M€ ou 3%</div>
+                                    <div class="sanction-desc">du chiffre d'affaires mondial annuel</div>
+                                    <p>Pour les violations des obligations relatives aux systèmes à haut risque</p>
+                                </div>
+                                <div class="sanction-card medium">
+                                    <div class="sanction-amount">7,5 M€ ou 1,5%</div>
+                                    <div class="sanction-desc">du chiffre d'affaires mondial annuel</div>
+                                    <p>Pour la fourniture d'informations incorrectes aux autorités</p>
+                                </div>
+                            </div>
+                            <div class="sanctions-note">
+                                <p><strong>Note :</strong> Pour les PME et startups, les amendes sont calculées sur la base du montant le plus élevé entre le pourcentage et le montant fixe, mais des réductions peuvent s'appliquer.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- About Section -->
+            <section id="about" class="section">
+                <div class="about-container">
+                    <h2>À propos de ce simulateur</h2>
+
+                    <div class="about-content">
+                        <div class="about-card">
+                            <h3>Objectif</h3>
+                            <p>Ce simulateur a été conçu pour aider les organisations à évaluer de manière préliminaire la conformité de leurs systèmes d'intelligence artificielle au Règlement (UE) 2024/1689, communément appelé « AI Act ».</p>
+                        </div>
+
+                        <div class="about-card">
+                            <h3>Méthodologie</h3>
+                            <p>L'évaluation se base sur une analyse des articles et annexes du Règlement, en particulier :</p>
+                            <ul>
+                                <li>Article 5 : Pratiques interdites</li>
+                                <li>Articles 6-7 : Classification des systèmes à haut risque</li>
+                                <li>Annexe I : Législation d'harmonisation de l'Union</li>
+                                <li>Annexe III : Domaines à haut risque</li>
+                                <li>Article 50 : Obligations de transparence</li>
+                            </ul>
+                        </div>
+
+                        <div class="about-card warning">
+                            <h3>Avertissement</h3>
+                            <p>Ce simulateur fournit une évaluation indicative et ne constitue pas un avis juridique. Pour une analyse complète de conformité, il est recommandé de consulter des experts juridiques spécialisés et de se référer au texte officiel du Règlement.</p>
+                        </div>
+
+                        <div class="about-card">
+                            <h3>Ressources officielles</h3>
+                            <ul class="resources-list">
+                                <li>
+                                    <a href="https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:32024R1689" target="_blank" rel="noopener">
+                                        Texte officiel du Règlement (EUR-Lex)
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://digital-strategy.ec.europa.eu/fr/policies/regulatory-framework-ai" target="_blank" rel="noopener">
+                                        Commission Européenne - Cadre réglementaire pour l'IA
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://artificialintelligenceact.eu/" target="_blank" rel="noopener">
+                                        AI Act Explorer
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="version-info">
+                        <p>Version 1.0 - Basé sur le Règlement (UE) 2024/1689</p>
+                        <p>Dernière mise à jour : Décembre 2024</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-content">
+                <p>&copy; 2024 AI Act Compliance Simulator. Cet outil est fourni à titre informatif uniquement.</p>
+                <p>Le contenu ne constitue pas un avis juridique. Consultez le <a href="https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:32024R1689" target="_blank" rel="noopener">texte officiel</a> pour toute décision de conformité.</p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/questions.js"></script>
+    <script src="js/risk-engine.js"></script>
+    <script src="js/report.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
